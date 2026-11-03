@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestión de pedidos de CaféTec.">
+    <title>CaféTec | Gestión de pedidos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <header class="barra-superior">
+        <a href="#" class="logo">
+            <i class="bi bi-cup-hot-fill"></i>
+            <span>CaféTec</span>
+        </a>
+
+        <span class="estado-sistema">
+            <span class="punto-activo"></span>
+            Sistema de pedidos
+        </span>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="portada" data-reveal>
+            <div class="portada-contenido">
+                <span class="etiqueta">
+                    <i class="bi bi-stars"></i>
+                    CAFÉTEC · MOSTRADOR
+                </span>
+
+                <h1>Un buen café,<br>un gran <span>momento.</span></h1>
+
+                <p>
+                    Gestiona los pedidos de forma sencilla,
+                    organiza las entregas y mantén tus cuentas al día.
+                </p>
+
+                <a href="#registro" class="btn-portada">
+                    Registrar pedido
+                    <i class="bi bi-arrow-down"></i>
+                </a>
+            </div>
+
+            <div class="portada-imagen">
+                <img src="cafeteria.jpg" alt="Taza de café">
+                <div class="imagen-etiqueta">
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Hecho con dedicación</span>
+                </div>
+            </div>
+
+            <div class="decoracion decoracion-uno"></div>
+            <div class="decoracion decoracion-dos"></div>
+        </section>
+
+        <section class="seccion registro" id="registro" data-reveal>
+            <div class="titulo-seccion">
+                <div>
+                    <span class="subtitulo">NUEVO REGISTRO</span>
+                    <h2>Agregar un pedido</h2>
+                    <p>Completa los datos del pedido del cliente.</p>
+                </div>
+
+                <div class="icono-seccion">
+                    <i class="bi bi-pencil-square"></i>
+                </div>
+            </div>
+
+            <form id="form-pedido" novalidate>
+                <div class="campo">
+                    <label for="producto">Nombre del producto</label>
+                    <div class="input-con-icono">
+                        <i class="bi bi-cup-straw"></i>
+                        <input
+                            id="producto"
+                            type="text"
+                            placeholder="Ej. Capuccino"
+                        >
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="precio">Precio (S/)</label>
+                    <div class="input-con-icono">
+                        <i class="bi bi-currency-dollar"></i>
+                        <input
+                            id="precio"
+                            type="number"
+                            step="0.10"
+                            placeholder="8.50"
+                        >
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="cantidad">Cantidad</label>
+                    <div class="input-con-icono">
+                        <i class="bi bi-box-seam"></i>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            min="0"
+                            placeholder="2"
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-agregar">
+                    <i class="bi bi-plus-lg"></i>
+                    Agregar pedido
+                </button>
+            </form>
+
+            <p id="mensaje" aria-live="polite"></p>
+        </section>
+
+        <section class="seccion pedidos" data-reveal>
+            <div class="titulo-seccion titulo-pedidos">
+                <div>
+                    <span class="subtitulo">ORGANIZACIÓN</span>
+                    <h2>Pedidos del mostrador</h2>
+                    <p>Consulta y administra los pedidos registrados.</p>
+                </div>
+
+                <div class="icono-seccion">
+                    <i class="bi bi-receipt-cutoff"></i>
+                </div>
+            </div>
+
+            <div class="barra-filtro">
+                <label for="filtro">
+                    <i class="bi bi-funnel"></i>
+                    Filtrar por estado
+                </label>
+
+                <select id="filtro">
+                    <option value="todos">Todos los pedidos</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="entregado">Entregados</option>
+                </select>
+            </div>
+
+            <ul id="lista-pedidos">
+                <!-- Los pedidos se mostrarán aquí -->
+            </ul>
+
+            <div class="resumen">
+                <div class="resumen-icono">
+                    <i class="bi bi-wallet2"></i>
+                </div>
+
+                <div class="resumen-texto">
+                    <span>Total a cobrar</span>
+                    <p id="total">S/ 0.00</p>
+                </div>
+
+                <i class="bi bi-arrow-up-right resumen-flecha"></i>
+            </div>
+        </section>
+
+        <footer>
+            <p><i class="bi bi-cup-hot-fill"></i> CaféTec</p>
+            <span>Un buen café hace la diferencia.</span>
+        </footer>
+
+    </main>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
