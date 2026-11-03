@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimaTec - ViajaPerú</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>ClimaTec</h1>
+        <p>Consulta el clima actual de tu destino.</p>
+
+        <form id="form-clima">
+            <input id="ciudad" type="text" placeholder="Escribe una ciudad" required>
+            <button id="buscar" type="submit">Consultar clima</button>
+        </form>
+
+        <p id="mensaje"></p>
+
+        <section id="resultado" hidden>
+            <h2 id="nombre"></h2>
+            <p id="region"></p>
+            <p id="temperatura"></p>
+            <p id="viento"></p>
+        </section>
+
+        <button id="comparar" type="button">Comparar tiempos de consulta</button>
+        <button id="probar" type="button">Probar Promise.allSettled</button>
+        <pre id="pruebas"></pre>
+    </main>
+
+    <script src="./app.js" defer></script>
+</body>
+</html>
